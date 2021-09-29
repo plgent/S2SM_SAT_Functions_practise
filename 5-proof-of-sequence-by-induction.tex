@@ -1,0 +1,51 @@
+\question % Topic 3 - Functions and sketching graphs, Q4.
+Let $n$ be a natural number and define a sequence of functions by
+\[
+    f_0(x) = \frac{x}{x + 1}, \qquad f_{n + 1}(x) = f_0(f_n(x)).
+\]
+That is, $f_1(x) = f_0(f_0(x))$, $f_2(x) = f_0(f_1(x))$, $f_3(x) = f_0(f_2(x))$, and so on.
+
+\begin{parts}
+
+\part[2]
+Find $f_n(x)$ for $n = 1$ and $n = 2$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2in]
+We have
+\begin{align*}
+    f_1(x) &= f_0(f_0(x)) & f_2(x) &= f_0(f_1(x))\\
+    &= \frac{\frac{x}{x + 1}}{\frac{x}{x + 1} + 1} & &= \frac{\frac{x}{2x + 1}}{\frac{x}{2x + 1} + 1} \\
+    &= \frac{\frac{x}{\cancel{x + 1}}}{\frac{x + (x + 1)}{\cancel{x + 1}}} & &= \frac{\frac{x}{\cancel{2x + 1}}}{\frac{x + (2x + 1)}{\cancel{2x + 1}}} \\
+    &= \frac{x}{2x + 1}, & &= \frac{x}{3x + 1}.
+\end{align*}
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[5]
+Prove by mathematical induction that $\displaystyle{f_n(x) = \frac{x}{(n + 1)x + 1}}$, for all natural numbers $n$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[4.25in]
+\begin{proof}
+$P(n)$ is: $\displaystyle{f_n(x) = \frac{x}{(n + 1)x + 1}}$, for all $n \in \N$.
+
+\textbf{Basis}: If $n = 0$, then
+\[
+	f_0(x) = \frac{x}{(0 + 1)x + 1} = \frac{x}{x + 1}.
+\]
+So, $P(0)$ is true.
+
+\textbf{Inductive step}: If $P(k)$ is true, then $\displaystyle{f_k(x) = \frac{x}{(k + 1)x + 1}}$, for all $k \in \N$. Now,
+\begin{align*}
+	f_{k + 1} &= f_0(f_k(x)) \\
+	&= \frac{\frac{x}{(k + 1)x + 1}}{\frac{x}{(k + 1)x + 1} + 1} && (\textrm{by hypothesis}) \\
+	&= \frac{\frac{x}{\cancel{(k + 1)x + 1}}}{\frac{x + ((k + 1)x + 1)}{\cancel{(k + 1)x + 1}}} \\
+	&= \frac{x}{((k + 1) + 1)x + 1}.
+\end{align*}
+Since $P(0)$ is true and $P(k) \implies P(k + 1)$, by the PMI $\displaystyle{f_n(x) = \frac{x}{(n + 1)x + 1}}$ for all $n \in \N$.
+\end{proof}
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\end{parts}

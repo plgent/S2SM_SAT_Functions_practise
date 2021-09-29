@@ -1,0 +1,45 @@
+\question % Topic 3 - Functions and sketching graphs, Q2.
+Let $x > -2$ be a real number and let $f(x) = \log_{10}(x + 2)$.
+
+\begin{parts}
+
+\part[2]
+Find $f^{-1}(x)$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2in]
+Since
+\[
+    f : y = \log_{10}(x + 2)
+\]
+it follows that
+\begin{align*}
+	f^{-1} : x &= \log_{10}(y + 2) \\
+	10^x &= 10^{\log_{10}(y + 2)} \\
+	y &= 10^x - 2.
+\end{align*}
+Thus, $f^{-1}(x) = 10^x - 2$.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[3]
+Hence, show that $(f^{-1} \circ f)(x) = (f \circ f^{-1})(x) = x$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2.5in]
+The first composition $(f^{-1} \circ f)(x)$ is
+\begin{align*}
+	f^{-1}(f(x)) &= 10^{\log_{10}(x + 2)} - 2 \\
+	&= (x + 2) - 2 \\
+	&= x.
+\end{align*}
+The second is
+\begin{align*}
+	f(f^{-1}(x)) &= \log_{10}((10^x - 2) + 2) \\
+	&= \log_{10}(10^x) \\
+	&= x.
+\end{align*}
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\end{parts}

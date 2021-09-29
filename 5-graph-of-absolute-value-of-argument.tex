@@ -1,0 +1,145 @@
+\question % Sample Paper - Book 1, Q2.
+Let $f$ be a function defined by $\displaystyle{f(x) = \frac{2x^2}{x^2 - x - 2}}$.
+
+\begin{parts}
+
+\part[2]
+State the domain of $f$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[.75in]
+We have
+\[
+    \dom(f) = \{x \in \R : x \neq -1, x \neq 2\}.
+\]
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[2]
+Perform polynomial division on $\displaystyle{\frac{2x^2}{x^2 - x - 2}}$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1.75in]
+Long division yields
+\[
+    \polylongdiv{2x^2}{x^2 - x - 2}
+\]
+So
+\[
+    \frac{2x^2}{x^2 - x - 2} = 2 + \frac{2x + 4}{x^2 - x - 2}.
+\]
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[3]
+Use a limit argument, and part (b), to explain why $y = 2$ is a horizontal asymptote.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2in]
+By part (b) we have
+\[
+    \lim_{x \to \infty} f(x) = \lim_{x \to \infty} \left(2 + \frac{2x + 4}{x^2 - x - 2}\right) = 2,
+\]
+and
+\[
+    \lim_{x \to -\infty} f(x) = \lim_{x \to -\infty} \left(2 + \frac{2x + 4}{x^2 - x - 2}\right) = 2.
+\]
+Thus, $y = 2$ is a horizontal asymptote.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\uplevel{When graphing functions, one should always include dashed, labelled asymptotes, any ``interesting'' points and the graph should always be labelled with, say, $y = f(x)$.}
+
+\part[5]
+On the axes in Figure~\ref{fig:graph-of-quadratic-divided-by-quadratic} sketch the graph of $y = f(x)$.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        my axis style,
+        axis equal,
+        ymin=-5.75,
+        ymax=5.75,
+        xmin=-6.75,
+        xmax=6.75,
+        minor tick num=1,
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[
+        domain=-6.75:-1.001,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*x^2)/(x^2 - x - 2)};
+    \addplot[
+        domain=-.999:1.999,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*x^2)/(x^2 - x - 2)};
+    \addplot[
+        domain=2.001:6.75,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*x^2)/(x^2 - x - 2)} node[near start, right] {$y = f(x)$};
+    \draw[semithick, red, dashed, <->] (-1,-5.75) -- node[near start, left] {$x = -1$} (-1,5.75) (2,-5.75) -- node[near start, right] {$x = 2$} (2,5.75) (-6.75,2) -- node[near start, above] {$y = 2$} (6.75,2);
+    \fill[red] (0,0) node[above right] {$(0, 0)$} circle (2pt);
+    \draw[red] (6,-4) node[anchor=west, text width=2in, rounded corners=5pt, fill=white, draw=red] {always include dashed, labelled asymptotes, interesting points, $y = \textrm{such-and-such}$, arrowheads or closed endpoints};
+    \else
+    \fi
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Sketch the graph of $y = f(x)$ here.}
+    \label{fig:graph-of-quadratic-divided-by-quadratic}
+\end{figure}
+
+\part[3]
+On the axes in Figure~\ref{fig:graph-of-quadratic-divided-by-quadratic-absolute-value} sketch the graph of $y = f(\abs{x})$.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        my axis style,
+        axis equal,
+        ymin=-5.75,
+        ymax=5.75,
+        xmin=-6.75,
+        xmax=6.75,
+        minor tick num=1,
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[
+        domain=-6.75:-2.001,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*abs(x)^2)/(abs(x)^2 - abs(x) - 2)};
+    \addplot[
+        domain=-1.999:1.999,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*abs(x)^2)/(abs(x)^2 - abs(x) - 2)};
+    \addplot[
+        domain=2.001:6.75,
+        restrict y to domain=-5.75:5.75,
+        red,
+        <->,
+    ] {(2*abs(x)^2)/(abs(x)^2 - abs(x) - 2)} node[near start, right] {$y = f(\abs{x})$};
+    \draw[semithick, red, dashed, <->] (-2,-5.75) -- node[near start, left] {$x = -2$} (-2,5.75) (2,-5.75) -- node[near start, right] {$x = 2$} (2,5.75) (-6.75,2) -- node[near start, above] {$y = 2$} (6.75,2);
+    \fill[red] (0,0) node[above right] {$(0, 0)$} circle (2pt);
+    \draw[red] (6,-4) node[anchor=west, text width=2in, rounded corners=5pt, fill=white, draw=red] {always include dashed, labelled asymptotes, interesting points, $y = \textrm{such-and-such}$, arrowheads or closed endpoints};
+    \else
+    \fi
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Sketch the graph of $y = f(\abs{x})$ here.}
+    \label{fig:graph-of-quadratic-divided-by-quadratic-absolute-value}
+\end{figure}
+
+\end{parts}

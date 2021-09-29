@@ -1,0 +1,21 @@
+\question[5] % https://math.stackexchange.com/questions/2538331/odd-function-composition.
+Prove Theorem~\ref{thm:composition-of-an-odd-function-with-itself} using mathematical induction.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[4.5in]
+\begin{proof}
+$P(n)$ is: if $f$ is an odd function, then $f^n$ is an odd function, for all $n \in \Z^+$.
+
+\textbf{Basis}: If $n = 1$, then $f^1 = f$. So, $P(1)$ is true.
+
+\textbf{Inductive step}: If $P(k)$ is true, then $f^k$ is an odd function for all $k \in \Z^+$. Now,
+\begin{align*}
+	f^{k + 1}(-x) &= f(f^k(-x)) \\
+	&= f(-f^k(x)) && (\textrm{by hypothesis}) \\
+	&= -f(f^k(x)) && (f \textrm{ is odd}) \\
+	&= -f^{k + 1}(x).
+\end{align*}
+Since $P(1)$ is true and $P(k) \implies P(k + 1)$, by the PMI $P(n)$ is true for all $n \in \Z^+$.
+\end{proof}
+\end{solutionorgrid}
+\end{EnvFullwidth}

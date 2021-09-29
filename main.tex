@@ -1,0 +1,96 @@
+\documentclass[
+    a4paper,
+    12pt,
+    addpoints,
+    % answers,
+    noanswers,
+    hidelinks,
+]
+{exam}
+
+%%% Packages and macros
+
+\usepackage{1-preamble}
+
+%%% Page layout
+
+\input{2-layout}
+
+%%% Subject, paper and conditions
+
+\newcommand{\subject}{Stage 2 Specialist Mathematics}
+\newcommand{\papername}{SAT: Functions (Practise)}
+\newcommand{\papernameshort}{Functions (Practise)}
+\newcommand{\timelimit}{$\infty$~Minutes}
+\newcommand{\conditions}{Notes, Calculator}
+\newcommand{\paperrules}{\timelimit, \conditions}
+
+\begin{document}
+
+% \input{3-cover-letter}
+
+\begin{questions}
+
+\input{5-logarithm-function}
+
+\threeast
+
+\input{5-maps-to-notation}
+
+\threeast
+
+\input{5-graph-of-absolute-value-of-argument}
+
+\ifprintanswers
+\threeast
+\else
+\fi
+
+\input{5-composition-with-absolute-value}
+
+\threeast
+
+\input{5-proof-of-sequence-by-induction}
+
+\triast
+
+% \uplevel{
+% \begin{definition}[Odd functions]
+% \label{def:odd-functions}
+% Let $f$ be a function such that for every $x$ in the domain, there also exists $-x$ in the domain. Then $f$ is an \emph{odd function} if
+% \[
+% 	f(-x) = -f(x).
+% \]
+% \end{definition}
+% }
+
+\uplevel{
+\begin{theorem}[Composition of an odd function with itself is odd]
+\label{thm:composition-of-an-odd-function-with-itself}
+Let $n$ be a positive integer and let $f$ be an odd function. Then the composition
+\[
+	f^n = \underbrace{f \circ f \circ \cdots \circ f}_{n \textrm{ times}}
+\]
+is an odd function.
+\end{theorem}
+}
+
+\input{5-proof-of-odd-composition-by-induction}
+
+\threeast
+
+\input{5-implicit-differentiation}
+
+\threeast
+
+\input{5-implicit-differentiation-derivative-of-inverse-function}
+
+\end{questions}
+
+\vfill
+
+\input{8-grading-table}
+
+\input{9-formulae-sheet}
+
+\end{document}

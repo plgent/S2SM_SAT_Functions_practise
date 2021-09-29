@@ -1,0 +1,133 @@
+\question % Sample Questions 2, Q14.
+Let $g$ be a function defined as $g(x) = 2\tan(x)$, for $-\pi \leq x \leq \pi$ where $\displaystyle{x \neq \pm \frac{\pi}{2}}$.
+
+\begin{parts}
+
+\part[2]
+Explain why $g$ is a function but doesn't have an inverse function.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1.5in]
+As $y = g(x)$ passes the vertical line test, $g$ is a function. However, $y = g(x)$ doesn't pass the horizontal line test, so $g^{-1}$ doesn't exist.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\uplevel{Let $f$ be a function defined as $f(x) = 2\tan(x)$, for $\displaystyle{-\frac{\pi}{2} < x < \frac{\pi}{2}}$.}
+
+\part[1]
+Explain why $f$ does have an inverse function.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1in]
+The function $f$ is one-to-one.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[2]
+Show that $\displaystyle{f^{-1}(x) = \arctan\!\pfrac{x}{2}}$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2.5in]
+There is
+\begin{align*}
+    f : y &= 2\tan(x), & f^{-1} : x &= 2\tan(y) \\
+    & & y &= \arctan\! \pfrac{x}{2}.
+\end{align*}
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[2]
+State the domain and range of $f^{-1}(x)$ in \emph{exact} form.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[2in]
+Since
+\[
+    \dom(f) = \{x \in \R : -\frac{\pi}{2} < x <  \frac{\pi}{2}\}, \qquad \ran(f) = \R,
+\]
+there must be
+\[
+    \dom(f^{-1}) = \R, \qquad \ran(f^{-1}) = \{x \in \R : -\frac{\pi}{2} < x <  \frac{\pi}{2}\}.
+\]
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[2]
+On the axes in Figure~\ref{fig:graph-of-an-inverse-tangent-function} sketch the graph of $y = f^{-1}(x)$.
+
+\ifprintanswers
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        my axis style,
+        xmin=-10.25,
+        xmax=10.25,
+        ymin=-1.75,
+        ymax=1.75,
+        ytick={-pi/2,-pi/4,pi/4,pi/2},
+        yticklabels={$-\frac{\pi}{2}$,$-\frac{\pi}{4}$,$\frac{\pi}{4}$,$\frac{\pi}{2}$},
+    ]
+    \coordinate (O) at (0,0);
+    \addplot[
+        domain=-10:10,
+        red,
+        <->,
+    ] {atan(x/2)} node[at end, below] {$y = f(x)$};
+    \draw[semithick, red, dashed, <->] (-10,pi/2) -- (10,pi/2) node[near start, above] {$y = \frac{\pi}{2}$};
+    \draw[semithick, red, dashed, <->] (-10,-pi/2) -- (10,-pi/2) node[near start, below] {$y = -\frac{\pi}{2}$};
+    \fill[red] (O) circle (2pt) node[below right] {$(0, 0)$};
+    \draw[red] (7.5,-.875) node[anchor=west, text width=2in, rounded corners=5pt, fill=white, draw=red] {always include dashed, labelled asymptotes, interesting points, $y = \textrm{such-and-such}$, arrowheads or closed endpoints};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Sketch the inverse function here.}
+    \label{fig:graph-of-an-inverse-tangent-function}
+\end{figure}
+\else
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        my axis style,
+        height=3.5in,
+        xmin=-10.25,
+        xmax=10.25,
+        ymin=-1.75,
+        ymax=1.75,
+        xtick=\empty,
+        ytick=\empty,
+    ]
+    \addplot[
+        domain=-10:10,
+        red,
+        <->,
+        opacity=0,
+    ] {atan(x/2)};
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Sketch the inverse function here.}
+    \label{fig:graph-of-an-inverse-tangent-function}
+\end{figure}
+\fi
+
+\part[4]
+If $\displaystyle{y = \arctan \pfrac{x}{2}}$, then $\displaystyle{\frac{x}{2} = \tan(y)}$. Show by implicit differentiation that $\displaystyle{\diff{y}{x} = \frac{2}{4 + x^2}}$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[4in]
+We have
+\begin{align*}
+    \diff{}{x}(\tan(y)) &= \diff{}{x} \pfrac{x}{2} \\
+    \sec^2(y) \diff{y}{x} &= \frac{1}{2} \\
+    (1 + \tan^2(y))\diff{y}{x} &= \frac{1}{2} && (\textrm{Pythagoras}) \\
+    \diff{y}{x} &= \frac{1}{2(1 + \tan^2(y))}.
+\end{align*}
+Since $\displaystyle{\tan^2(y) = \frac{x^2}{4}}$ we get
+\begin{align*}
+    \diff{y}{x} &= \frac{1}{2 + \frac{x^2}{2}} {\color{red}\times \frac{2}{2}} \\
+    &= \frac{2}{4 + x^2}.
+\end{align*}
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\end{parts}

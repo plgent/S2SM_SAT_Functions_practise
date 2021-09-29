@@ -1,0 +1,78 @@
+\question % Topic 3 - Functions and sketching graphs, Q7.
+Let $f$ and $g$ be functions defined as $f(x) = x^2 - 4x + 3$ and $g(x) = \abs{f(\abs{x})}$, respectively.
+
+\begin{parts}
+
+\part[2]
+Find $g(x)$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1in]
+We have
+\[
+    g(x) = \abs{\abs{x}^2 - 4\abs{x} + 3}.
+\]
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[4]
+Graph and clearly label both functions on the axes in Figure~\ref{fig:graph-of-absolute-value-twice}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+        my axis style,
+        axis equal,
+        ymin=-5,
+        ymax=5,
+        xmin=-5,
+        xmax=5,
+        minor tick num=1,
+        grid=both,
+    ]
+    \ifprintanswers
+    \addplot[
+        domain=-5:5,
+        restrict y to domain=-5:5,
+        thick,
+        red,
+        <->,
+    ] {x^2 - 4*x + 3} node[pos=.25, right] {$y = f(x)$};
+    \addplot[
+        domain=-5:5,
+        restrict y to domain=-5:5,
+        densely dashed,
+        blue,
+        <->,
+    ] {abs(abs(x)^2 - 4*abs(x) + 3)} node[at start, left] {$y = \abs{f(\abs{x})}$};
+    \fill[red] (2,-1) node[below] {$(2, -1)$} circle (2pt);
+    \fill[blue] (-2,1) node[above] {$(-2, 1)$} circle (2pt);
+    \draw[red] (4,-3) node[anchor=west, text width=2in, rounded corners=5pt, fill=white, draw=red] {always include interesting points, $y = \textrm{such-and-such}$, arrowheads or closed endpoints};
+    \else
+    \fi
+    \end{axis}
+    \end{tikzpicture}
+    \caption{Sketch the graphs of $y = f(x)$ and $y = g(x)$ here.}
+    \label{fig:graph-of-absolute-value-twice}
+\end{figure}
+
+\part[1]
+Explain the graphical effect of the ``inner'' absolute value function in the definition of $g$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1in]
+The graph for $x < 0$ is discarded and the graph for $x \geq 0$ is reflected in the $y$-axis.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\part[1]
+Explain the graphical effect of the ``outer'' absolute value function in the definition of $g$.
+
+\begin{EnvFullwidth}
+\begin{solutionorgrid}[1in]
+The graph for $f(x) < 0$ is reflected in the $x$-axis, discarding what was there.
+\end{solutionorgrid}
+\end{EnvFullwidth}
+
+\end{parts}
